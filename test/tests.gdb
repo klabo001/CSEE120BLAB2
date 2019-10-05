@@ -44,3 +44,16 @@ checkResult
 set $passed=$tests-$failed
 eval "shell echo Passed %d/%d tests.\n",$passed,$tests
 echo ======================================================\n
+
+test "PINA: 0x03 => PORTB: 0x00"
+setPINA 0x03
+continue 5
+expectPORTB 0x00
+checkResult
+
+test "PINA: 0x01 => PORTB: 0x01"
+setPINA 0x01
+continue 5
+expectPORTB 0x01
+checkResult
+
